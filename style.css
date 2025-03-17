@@ -1,0 +1,73 @@
+body {
+  background-color: oklch(0.135587 0.016406 269.396);
+}
+
+.buttonRecommend {
+  background-color: oklab(0.741399 -0.0829447 -0.108729);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 6px;
+  margin: 4px;
+  font-size: 25px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 75vh;           
+
+  padding-bottom: 0px;
+  margin-bottom: -250px;
+}
+
+.centered {
+  position: relative;
+  display: inline-block;
+  bottom: 3rem;
+}
+
+.result {
+  position: relative;
+  width: 25rem;
+  margin: 0 auto;
+  bottom: 3rem;
+}
+
+.submit-button {
+  display: flex;
+  height: 3rem;
+  width: 7rem;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  background-color: oklab(0.741399 -0.0829447 -0.108729);
+  color: oklch(0.135587 0.016406 269.396);
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.button-txt {
+  color: white;
+  max-width: 20px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.input-btn {
+  display: flex;
+  align-items: center;
+  width: 16.5rem;
+  height: 1rem;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 15px;
+  outline: none;
+  border: 2px;
+}
+
