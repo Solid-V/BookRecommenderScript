@@ -70,7 +70,6 @@ if (isset($result_data->docs)) {
   echo "<div class='result'>";
 
   foreach($result_data->docs as $books) {
-    //$volumeInfo = $books->volumeInfo;
     
     echo "<form action='index.php' method='get'>";
     echo "<button  type='submit' class='buttonRecommend'  name='book_data' value='" . htmlspecialchars($books->key) . "'>"; 
@@ -108,10 +107,7 @@ if (isset($result_data->docs)) {
   echo "Book not found";
 }
 
-} else {
-  //die();
-}
-  
+}   
 
  if (isset($_GET['book_data'])) {
    $_SESSION['selected_book'] = $_GET['book_data'];
@@ -120,7 +116,6 @@ if (isset($result_data->docs)) {
  }  
 
   if (!empty($_SESSION['selected_book'])) {
-    //echo "<p>Selected OLID: " . htmlspecialchars($_SESSION['selected_book']) . "</p>";
     $olid = str_replace("/works/", "", $_SESSION['selected_book']);
     $curl2 = curl_init();
     curl_setopt($curl2, CURLOPT_URL,"https://openlibrary.org/works/" . $olid . ".json?details=true");
@@ -145,7 +140,6 @@ if (isset($result_data->docs)) {
         }
     }
 
-        //$subject_array = explode(',', $subject); 
       } 
       $clean_subjects = array_unique($clean_subjects);
       // Re-index array
@@ -168,11 +162,11 @@ if (isset($result_data->docs)) {
       $result = array();
 
       foreach ($urls as $i => $url) {
-        $multiCurl[$i] = curl_init();
-        curl_setopt($multiCurl[$i], CURLOPT_URL, str_replace("+", "_", $url));
-        curl_setopt($multiCurl[$i], CURLOPT_HEADER, 0);
-        curl_setopt($multiCurl[$i], CURLOPT_RETURNTRANSFER, 1);
-        curl_multi_add_handle($mh, $multiCurl[$i]);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, str_replace("+", "_", $url));
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_multi_add_handle($mh, $ch);
         $curlHandles[$url] = $ch;
       }
 
@@ -182,7 +176,7 @@ if (isset($result_data->docs)) {
       } while ($index > 0);
 
       //get content and remove handles
-      foreach($multiCurl as $k => $ch) {
+      foreach($curlHandles as $url => $ch) {
         $result_book = curl_multi_getcontent($ch);
         curl_multi_remove_handle($mh, $ch);
 
