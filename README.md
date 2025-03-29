@@ -7,5 +7,3 @@ work needs to be done on the frontend
 to run it use any webserver or use xampp
 
 code also needs to be cleaned
-
-I think I wont update the frontend here and just keep it as a script here if you want a fixed frontend I will setup a separate website for it
