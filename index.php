@@ -198,29 +198,6 @@ if (isset($result_data->docs)) {
     session_destroy(); // nuke session data 
   }
 ?>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookSuggestion</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <div class="container">
-    <div class="centered">
-    <form action="index.php" method="post"> 
-        <label class="button-txt">Please enter a book</label> <br>
-        <input class="input-btn" type="text" name="book"> <br>
-        <input class ="submit-button" type="submit" name="button" value="Search"> <br>
-    </form> 
-    </div>
-  </div>
-</body>
-
-</html>
 
 <?php
 
