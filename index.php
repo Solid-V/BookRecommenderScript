@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -416,4 +415,3 @@ if (isset($result_data->docs)) {
     session_destroy(); // nuke session data 
   }
 ?>
->>>>>>> new-feature-branch
