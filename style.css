@@ -37,8 +37,6 @@ body {
   bottom: 3rem;
 }
 
-<<<<<<< HEAD
-=======
 .resultbook {
   position: relative;
   width: 25rem;
@@ -48,7 +46,6 @@ body {
   color: aquamarine;
 }
 
->>>>>>> new-feature-branch
 .submit-button {
   display: flex;
   height: 3rem;
@@ -82,7 +79,3 @@ body {
   outline: none;
   border: 2px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> new-feature-branch
